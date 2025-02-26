@@ -1,26 +1,16 @@
+using InputSystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController 
 {
-    private readonly PlayerView _playerView;
+    private InputListener _listener;
+    private readonly PlayerMove _playerMove;
 
-    public PlayerController(PlayerView playerView)
+    public PlayerController(PlayerMove playerMove, InputListener listener)
     {
-        _playerView = playerView;
-    }
-    
-    public void Death()
-    {
-        _playerView.Death();
-    }
-    public void ReduceLife()
-    {
-        _playerView.ReduceLife();
-    }
-    public void Move(Vector2 direction)
-    {
-        _playerView.Move(direction);
+        _listener = listener;  
+        _playerMove = playerMove;
     }
 }

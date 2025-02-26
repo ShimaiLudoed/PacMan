@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BootStrapper : MonoBehaviour
 {
-    [SerializeField] private PlayerView playerView;
+    [SerializeField] private PlayerMove playerView;
     private PlayerController _playerController;
     [SerializeField] private LegacyInputListener inputListener;
 
