@@ -22,13 +22,13 @@ public class LegacyInputListener : MonoBehaviour
             if (vertical == 0)
             {
                 Vector2 vec = new Vector2(horizontal,0);
-                _controller.Move(vec);
+                //_controller.Move(vec);
             }
 
             else if (horizontal == 0)
             { 
                 Vector2 vec = new Vector2 (0,vertical);
-                _controller.Move(vec);
+                //_controller.Move(vec);
             }
         }
     }

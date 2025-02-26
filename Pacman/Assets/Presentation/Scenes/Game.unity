@@ -535,7 +535,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b6725ac80d0bc84aa4d004eebc123aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 3
 --- !u!50 &830728580
 Rigidbody2D:
   serializedVersion: 4
@@ -662,7 +661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerView: {fileID: 830728579}
-  inputListener: {fileID: 845651636}
+  inputListener: {fileID: 845651638}
 --- !u!114 &845651636
 MonoBehaviour:
   m_ObjectHideFlags: 0

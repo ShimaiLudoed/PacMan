@@ -1,3 +1,4 @@
+using InputSystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,12 +6,23 @@ using UnityEngine;
 public class BootStrapper : MonoBehaviour
 {
     [SerializeField] private PlayerMove playerView;
+    //TODO: validation for interface implementation or use another field type
+    [SerializeField] private InputListener inputListener;  
     private PlayerController _playerController;
-    [SerializeField] private LegacyInputListener inputListener;
+
+    private void Awake()
+    {
+        Debug.Log("START!");
+        _playerController = new (playerView, inputListener);
+    }
 
     private void Start()
     {
-        _playerController=new PlayerController(playerView);
-        inputListener.Construct(_playerController);
+        Debug.Log("BIND!");
+        _playerController.Bind();
+    }
+    private void OnDisable()
+    {
+        _playerController.Expose();
     }
 }

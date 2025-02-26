@@ -1,11 +1,14 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace InputSystem
 {
-    public class InputListener : MonoBehaviour
+    public class InputListener : MonoBehaviour, IInputHandler
     {
         private GameInputActions _inputActions;
+
+        public event Action<Vector2> OnMove;
 
         private void Start()
         {
@@ -18,10 +21,10 @@ namespace InputSystem
             Expose();
         }
 
-        private void Update()
+        /*private void Update()
         {
-            //Debug.Log(_inputActions.Game.Move.ReadValue<Vector2>());
-        }
+            Debug.Log(_inputActions.Game.Move.ReadValue<Vector2>());
+        }*/
 
         private void Bind()
         {
@@ -34,7 +37,8 @@ namespace InputSystem
         private void OnMoveInputStarted(InputAction.CallbackContext context)
         {
             Vector2 moveDirection = context.ReadValue<Vector2>();
-            Debug.Log(moveDirection);
+            //Debug.Log(moveDirection);
+            OnMove?.Invoke(moveDirection);
 
         }
 
