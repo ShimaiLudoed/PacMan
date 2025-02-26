@@ -6,7 +6,7 @@ public class BootStrapper : MonoBehaviour
 {
     [SerializeField] private PlayerView playerView;
     private PlayerController _playerController;
-    [SerializeField] private InputListener inputListener;
+    [SerializeField] private LegacyInputListener inputListener;
 
     private void Start()
     {

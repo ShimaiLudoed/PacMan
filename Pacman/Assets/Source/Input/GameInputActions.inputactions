@@ -1,12 +1,12 @@
 {
-    "name": "Move",
+    "name": "GameInputActions",
     "maps": [
         {
-            "name": "Move ",
+            "name": "Game",
             "id": "c8f8512e-888b-4666-a62c-bdeea8ddf7d3",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "Move ",
                     "type": "Value",
                     "id": "396cae89-6fc2-4f06-a7a5-81192d93ebd7",
                     "expectedControlType": "Vector2",
@@ -23,7 +23,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Move ",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -33,8 +33,8 @@
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "New action",
+                    "groups": "PC",
+                    "action": "Move ",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -44,8 +44,8 @@
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "New action",
+                    "groups": "PC",
+                    "action": "Move ",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -55,8 +55,8 @@
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "New action",
+                    "groups": "PC",
+                    "action": "Move ",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -66,8 +66,8 @@
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "New action",
+                    "groups": "PC",
+                    "action": "Move ",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -78,7 +78,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Move ",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -88,8 +88,8 @@
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "New action",
+                    "groups": "PC",
+                    "action": "Move ",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -99,8 +99,8 @@
                     "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "New action",
+                    "groups": "PC",
+                    "action": "Move ",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -110,8 +110,8 @@
                     "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "New action",
+                    "groups": "PC",
+                    "action": "Move ",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -121,13 +121,25 @@
                     "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "New action",
+                    "groups": "PC",
+                    "action": "Move ",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }
             ]
         }
     ],
-    "controlSchemes": []
+    "controlSchemes": [
+        {
+            "name": "PC",
+            "bindingGroup": "PC",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
 }

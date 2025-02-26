@@ -4,12 +4,11 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerView : MonoBehaviour
-{
+{    
     [SerializeField] private int life;
     private Rigidbody2D _rb;
     void Start()
     {
-
         _rb = GetComponent<Rigidbody2D>();
     }
 
@@ -28,14 +27,14 @@ public class PlayerView : MonoBehaviour
         }
     }
 
-    private void Update()
+/*    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.G))
         {
             ReduceLife();
             Debug.Log(life +"Хлоп");
         }
-    }
+    }*/
 
     public void Death()
     {
