@@ -1,27 +1,57 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class PlayerHealth : MonoBehaviour
+namespace Player
 {
-    [SerializeField] private int maxHealth;
-    private int _currentHealth;
-
-    private void Start()
+    public class PlayerHealth : MonoBehaviour
     {
-        _currentHealth = maxHealth;
-    }
+        public int CurrentHealth;
+        [SerializeField] private Image[] healthIcons;
 
-    public void ReduceLife()
-    {
-        _currentHealth--;
-        if(_currentHealth == 0 )
+        private void Update()
         {
-            Death();
+            if (Input.GetKeyDown(KeyCode.G))
+            {
+                TakeDamage();
+            }
         }
-    }
-    public void Death()
-    {
-        Destroy(gameObject); 
+
+        private void Start()
+        {
+            CurrentHealth = healthIcons.Length;
+            UpdateHealthUI();
+        }
+
+        public void TakeDamage()
+        {
+            CurrentHealth--;
+            UpdateHealthUI();
+            if(CurrentHealth == 0 )
+            {
+                Death();
+            }
+        }
+    
+        private void UpdateHealthUI()
+        {
+            for (int i = 0; i < healthIcons.Length; i++)
+            {
+                if (i < CurrentHealth)
+                {
+                    healthIcons[i].enabled = true;
+                }
+                else
+                {
+                    healthIcons[i].enabled = false;
+                }
+            }
+        }
+
+        private void Death()
+        {
+            SceneManager.LoadScene("Final");
+        }
     }
 }
