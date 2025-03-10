@@ -9,29 +9,26 @@ namespace Enemy
     {
         [SerializeField] private Transform player;
         [SerializeField] private float radius;
-        
-        protected override void MoveToNextWaypoint()
-        {
-            base.MoveToNextWaypoint();
-            if (Vector3.Distance(_agent.transform.position, player.position) < radius) 
-            {
-                _agent.SetDestination(player.position);
-            }
-            else
-            {
-                MoveToNextWaypoint();
-            }
-        }
-        protected override IEnumerator MoveToTarget(Transform target)
+        private bool _isChase = false;
+
+        private void Update()
         {
             if (Vector3.Distance(_agent.transform.position, player.position) < radius)
             {
-                return base.MoveToTarget(player);
+                ChasePlayer();
             }
-            else
-            {
-                return base.MoveToTarget(target);
-            }
+        }
+
+        private void ChasePlayer()
+        {
+            StopCurrentMoveRoutine();
+            Move(player.position, out var moveRoutine);
+
+        }
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, radius);
         }
     }
 }
