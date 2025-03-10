@@ -9,8 +9,8 @@ namespace Enemy
 {
   public abstract class EnemyMove : MonoBehaviour
   {
-    private Transform _target;
-    private Vector3 _currentVector;
+    [SerializeField] private Transform _target;
+    [SerializeField] private Vector3 _currentVector;
     [SerializeField] private List<Transform> waypoints;
     [SerializeField] private float speed; 
     [SerializeField] private float waitTime ; 
@@ -38,7 +38,7 @@ namespace Enemy
       StartCoroutine(MoveToTarget(_target));
     }
 
-    private IEnumerator MoveToTarget(Transform target)
+    protected virtual IEnumerator MoveToTarget(Transform target)
     {
       while (Vector3.Distance(_agent.transform.position, target.position) > 1f)
       {
