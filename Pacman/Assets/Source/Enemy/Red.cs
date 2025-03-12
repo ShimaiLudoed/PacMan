@@ -22,6 +22,7 @@ namespace Enemy
         private void ChasePlayer()
         {
             _isChase = true;
+            MoveToTarget(player.position);
         }
 
         private void StopChase()
@@ -30,6 +31,20 @@ namespace Enemy
             Move();
         }
 
- 
+        protected override void MoveToTarget(Vector3 target)
+        {
+            if (_isChase == false)
+            {
+                base.MoveToTarget(target);   
+            }
+            else
+            {
+                while (Vector3.Distance(_agent.transform.position, player.position)>1)
+                {
+                    _agent.SetDestination(new Vector3(player.position.x, player.position.y, transform.position.z));
+                }
+                MoveToTarget(player.position);
+            }
+        }
     }
 }

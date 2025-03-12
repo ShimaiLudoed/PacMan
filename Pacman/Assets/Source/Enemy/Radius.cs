@@ -9,7 +9,7 @@ namespace Enemy
     [SerializeField] private LayerMask player;
     public event Action OnPlayerLeave;
     public event Action OnPlayerDetect;
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
       if (LayerMaskCheck.ContainsLayer(player, other.gameObject.layer))
       {
