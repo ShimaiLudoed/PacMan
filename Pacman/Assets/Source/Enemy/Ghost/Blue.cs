@@ -20,21 +20,28 @@ public class Blue : EnemyMove
 
     protected override void Update()
     {
-        if (_isRunningAway)
+        if (_goHome == false)
         {
-            if (_toPlayer)
+            if (_isRunningAway)
             {
-                _agent.SetDestination(player.position);
+                if (_toPlayer)
+                {
+                    _agent.SetDestination(player.position);
+                }
+                else
+                {
+                    Vector3 direction = (transform.position - player.position).normalized;
+                    _agent.SetDestination(transform.position + direction);
+                }
             }
             else
             {
-                Vector3 direction = (transform.position - player.position).normalized;
-                _agent.SetDestination(transform.position + direction);   
+                base.Update();
             }
         }
         else
         {
-            base.Update();
+            _agent.SetDestination(home.position);
         }
     }
 

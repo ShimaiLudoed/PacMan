@@ -8,12 +8,14 @@ using Random = UnityEngine.Random;
 namespace Enemy
 {
     public abstract class EnemyMove : MonoBehaviour
-    { 
+    {
         [SerializeField] protected Transform _target;
         [SerializeField] private List<Transform> waypoints;
         [SerializeField] private float speedAgent;
         private int _currentWaypointIndex = 0;
         protected NavMeshAgent _agent;
+        protected bool _goHome=false;
+        [SerializeField] protected Transform home;
 
         protected virtual void Start()
         {
@@ -26,16 +28,23 @@ namespace Enemy
             {
                 waypoints.RemoveAt(0);
             }
+
             Move();
         }
+
         protected virtual void Update()
         {
             if (Vector3.Distance(transform.position, _target.position) < .2f)
             {
-                Move(); 
+                Move();
             }
         }
-        protected void Move()
+
+        public void GoHome()
+        {
+            _goHome = true;
+        }
+        public void Move()
         {
             if (waypoints.Count == 0) return;
             _currentWaypointIndex = Random.Range(0, waypoints.Count);

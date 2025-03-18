@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 namespace Player
 {
-    public class PlayerHealth : MonoBehaviour
+    public class PlayerHealth : MonoBehaviour, IObserver
     {
+        public bool IsDamage;
         public int CurrentHealth;
         [SerializeField] private Image[] healthIcons;
 
@@ -52,6 +53,12 @@ namespace Player
         private void Death()
         {
             SceneManager.LoadScene("Final");
+        }
+
+        public void Update(bool isBonusActive)
+        {
+            Debug.Log(isBonusActive);
+            IsDamage = isBonusActive;
         }
     }
 }

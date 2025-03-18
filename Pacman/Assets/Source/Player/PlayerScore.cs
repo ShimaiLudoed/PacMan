@@ -11,6 +11,9 @@ namespace Player
     [SerializeField] private TMP_Text scoreText;
     private int _score;
 
+    [SerializeField] private int scorePerHit;
+    private int _hitCount=1;
+
     private void Start()
     {
       _score = 0;
@@ -25,6 +28,18 @@ namespace Player
       {
         Finish();
       }
+    }
+
+    public void Attack()
+    {
+      _score += scorePerHit * _hitCount;
+      _hitCount++;
+      UpdateScoreText();
+    }
+
+    public void Reset()
+    {
+      _hitCount = 1;
     }
 
     private void UpdateScoreText()
