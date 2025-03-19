@@ -39,5 +39,11 @@ namespace Enemy
             _isChase = false;
             Move();
         }
+
+        private void OnDestroy()
+        {
+            radius.OnPlayerDetect -= ChasePlayer;
+            radius.OnPlayerLeave -= StopChase;
+        }
     }
 }

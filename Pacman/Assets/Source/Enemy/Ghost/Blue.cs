@@ -74,5 +74,10 @@ public class Blue : EnemyMove
             }
         }
     }
+    private void OnDestroy()
+    {
+        radius.OnPlayerDetect -= RunAwayFromPlayer;
+        radius.OnPlayerLeave -= StopRunningAway;
+    }
 
 }

@@ -44,6 +44,14 @@ namespace Enemy
         {
             _goHome = true;
         }
+
+        public void GoMove()
+        {
+            if(Vector3.Distance(transform.position, home.position) <.5f)
+            {
+               
+            }
+        }
         public void Move()
         {
             if (waypoints.Count == 0) return;
