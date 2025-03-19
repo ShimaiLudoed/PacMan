@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageState : MonoBehaviour
+public class DamageState : AState
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void Enter()
     {
-        
+        throw new System.NotImplementedException();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Exit()
     {
-        
+        throw new System.NotImplementedException();
+    }
+
+    public override void Update()
+    {
+        throw new System.NotImplementedException();
     }
 }

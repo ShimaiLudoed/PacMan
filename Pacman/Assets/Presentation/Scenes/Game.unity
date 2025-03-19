@@ -1295,7 +1295,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &830728581
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1375,7 +1375,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5b1b9c986cf28149b4f2f52f314c9bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsDamage: 0
+  triggerDetector: {fileID: 830728585}
+  pauseDuration: 2
+  playerStartPosition: {x: 0, y: 0, z: 0}
+  IsDamage: 1
   CurrentHealth: 0
   healthIcons:
   - {fileID: 93740947}

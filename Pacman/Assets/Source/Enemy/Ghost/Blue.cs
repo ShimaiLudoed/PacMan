@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Blue : EnemyMove
+public class Blue : EnemyMovement
 {
     private bool _toPlayer;
     private bool _isRunningAway = false;

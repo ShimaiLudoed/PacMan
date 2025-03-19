@@ -3,18 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IdleState : EnemyMove, AState
+public class IdleState : AState
 {
-    public void Enter()
-    {
-    }
-
-    public void Exit()
+    public override void Enter()
     {
         throw new System.NotImplementedException();
     }
 
-    public void Update()
+    public override void Exit()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void Update()
     {
         throw new System.NotImplementedException();
     }

@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 
 namespace Enemy
 {
-    public abstract class EnemyMove : MonoBehaviour
+    public abstract class EnemyMovement : MonoBehaviour
     {
         [SerializeField] protected Transform _target;
         [SerializeField] private List<Transform> waypoints;

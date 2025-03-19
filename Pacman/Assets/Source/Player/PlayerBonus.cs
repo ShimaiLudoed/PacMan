@@ -26,7 +26,7 @@ public class PlayerBonus : IObserverable
   {
     foreach (var observer in _observers)
     {
-      observer.Update(IsBonusActive);
+     // observer.Update(IsBonusActive);
     }
   }
 

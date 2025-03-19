@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface AState 
+public abstract class AState 
 {
-    public void Enter();
-    public void Exit();
-    public void Update();
+    public abstract void Enter();
+    public abstract void Exit();
+    public abstract void Update();
 }

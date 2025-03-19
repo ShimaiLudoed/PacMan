@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Enemy
 {
-    public class Red : EnemyMove
+    public class Red : EnemyMovement
     {
         public bool _isChase=false;
         [SerializeField] private Transform player;
